@@ -4,7 +4,7 @@ import { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { Button } from "./ui/button";
 import { Upload as UploadIcon, Image as ImageIcon, X } from "lucide-react";
-import Image from "next/image";
+
 interface ImageUploadProps {
   onImageSelect: (imageData: string) => void;
   currentImage: string | null;
@@ -58,10 +58,10 @@ export function ImageUpload({ onImageSelect, currentImage }: ImageUploadProps) {
     onDrop,
     accept: {
       "image/png": [".png"],
-      "image/jpeg": [".jpg", ".jpeg"],
+      "image/jpeg": [".jpg", ".jpeg"]
     },
     maxSize: 10 * 1024 * 1024, // 10MB
-    multiple: false,
+    multiple: false
   });
 
   const handleRemove = () => {
